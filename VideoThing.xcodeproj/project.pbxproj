@@ -14,6 +14,11 @@
 		3F4936EC1B5D4FD10029B61F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4936EB1B5D4FD10029B61F /* Images.xcassets */; };
 		3F4936EF1B5D4FD10029B61F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4936ED1B5D4FD10029B61F /* LaunchScreen.xib */; };
 		3F4936FB1B5D4FD10029B61F /* VideoThingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4936FA1B5D4FD10029B61F /* VideoThingTests.m */; };
+		3F4937061B5D4FF70029B61F /* CameraBufferSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4937051B5D4FF70029B61F /* CameraBufferSource.m */; };
+		3F4937081B5D50B60029B61F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4937071B5D50B60029B61F /* AVFoundation.framework */; };
+		3F49370B1B5D5C780029B61F /* CoreImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49370A1B5D5C780029B61F /* CoreImageView.m */; };
+		3F49370D1B5D5CA50029B61F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F49370C1B5D5CA50029B61F /* CoreImage.framework */; };
+		3F49370F1B5D5CB20029B61F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F49370E1B5D5CB20029B61F /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,13 @@
 		3F4936F41B5D4FD10029B61F /* VideoThingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoThingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4936F91B5D4FD10029B61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4936FA1B5D4FD10029B61F /* VideoThingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoThingTests.m; sourceTree = "<group>"; };
+		3F4937041B5D4FF70029B61F /* CameraBufferSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraBufferSource.h; sourceTree = "<group>"; };
+		3F4937051B5D4FF70029B61F /* CameraBufferSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraBufferSource.m; sourceTree = "<group>"; };
+		3F4937071B5D50B60029B61F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3F4937091B5D5C780029B61F /* CoreImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageView.h; sourceTree = "<group>"; };
+		3F49370A1B5D5C780029B61F /* CoreImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageView.m; sourceTree = "<group>"; };
+		3F49370C1B5D5CA50029B61F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		3F49370E1B5D5CB20029B61F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F49370F1B5D5CB20029B61F /* GLKit.framework in Frameworks */,
+				3F49370D1B5D5CA50029B61F /* CoreImage.framework in Frameworks */,
+				3F4937081B5D50B60029B61F /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,9 @@
 		3F4936D21B5D4FD00029B61F = {
 			isa = PBXGroup;
 			children = (
+				3F49370E1B5D5CB20029B61F /* GLKit.framework */,
+				3F49370C1B5D5CA50029B61F /* CoreImage.framework */,
+				3F4937071B5D50B60029B61F /* AVFoundation.framework */,
 				3F4936DD1B5D4FD00029B61F /* VideoThing */,
 				3F4936F71B5D4FD10029B61F /* VideoThingTests */,
 				3F4936DC1B5D4FD00029B61F /* Products */,
@@ -85,10 +103,14 @@
 				3F4936E31B5D4FD00029B61F /* AppDelegate.m */,
 				3F4936E51B5D4FD00029B61F /* ViewController.h */,
 				3F4936E61B5D4FD00029B61F /* ViewController.m */,
+				3F4937041B5D4FF70029B61F /* CameraBufferSource.h */,
+				3F4937051B5D4FF70029B61F /* CameraBufferSource.m */,
 				3F4936E81B5D4FD10029B61F /* Main.storyboard */,
 				3F4936EB1B5D4FD10029B61F /* Images.xcassets */,
 				3F4936ED1B5D4FD10029B61F /* LaunchScreen.xib */,
 				3F4936DE1B5D4FD00029B61F /* Supporting Files */,
+				3F4937091B5D5C780029B61F /* CoreImageView.h */,
+				3F49370A1B5D5C780029B61F /* CoreImageView.m */,
 			);
 			path = VideoThing;
 			sourceTree = "<group>";
@@ -220,8 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F4936E71B5D4FD00029B61F /* ViewController.m in Sources */,
+				3F49370B1B5D5C780029B61F /* CoreImageView.m in Sources */,
 				3F4936E41B5D4FD00029B61F /* AppDelegate.m in Sources */,
 				3F4936E11B5D4FD00029B61F /* main.m in Sources */,
+				3F4937061B5D4FF70029B61F /* CameraBufferSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
