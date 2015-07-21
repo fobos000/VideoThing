@@ -9,11 +9,12 @@
 #import "ViewController.h"
 #import "CameraBufferSource.h"
 #import "CoreImageView.h"
+#import "KaleidoImageFactory.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) CameraBufferSource *cameraBufferSource;
-@property (strong, nonatomic) IBOutlet CoreImageView *outputView;
+@property (nonatomic, strong) IBOutlet CoreImageView *outputView;
 
 @end
 
@@ -24,15 +25,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     self.cameraBufferSource = [[CameraBufferSource alloc] init];
     
     __weak ViewController *weakSelf = self;
-    self.cameraBufferSource.callback = ^(CMSampleBufferRef buffer){
+    self.cameraBufferSource.callback = ^(CMSampleBufferRef buffer) {
         CIImage *image = [CIImage imageWithCVPixelBuffer:CMSampleBufferGetImageBuffer(buffer)];
+        image = [image imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI_2)];
         weakSelf.outputView.image = image;
     };
     self.cameraBufferSource.running = YES;
@@ -41,6 +42,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)tapRecognized:(UITapGestureRecognizer *)sender {
+    UIImage *snapshot = self.outputView.snapshot;
+    
+    UIImageWriteToSavedPhotosAlbum(snapshot,
+                                   nil,
+                                   nil,
+                                   nil);
+}
+
+- (void)didSaveImage
+{
+    
 }
 
 @end

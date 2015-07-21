@@ -32,15 +32,12 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (void)awakeFromNib
 {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        EAGLContext *eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-        self.coreImageContext = [CIContext contextWithEAGLContext:eaglContext];
-        self.enableSetNeedsDisplay = NO;
-    }
-    return self;
+    EAGLContext *eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    self.context = eaglContext;
+    self.coreImageContext = [CIContext contextWithEAGLContext:eaglContext];
+    self.enableSetNeedsDisplay = NO;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -48,7 +45,30 @@
     if (self.image) {
         CGFloat scale = self.window.screen.scale;
         CGRect destRect = CGRectApplyAffineTransform(self.bounds, CGAffineTransformMakeScale(scale, scale));
-        [self.coreImageContext drawImage:self.image inRect:destRect fromRect:self.image.extent];
+        CGRect firstRect = destRect;
+        firstRect.size.width /= 2;
+        firstRect.size.height /= 2;
+        
+        CGRect secondRect = firstRect;
+        secondRect.origin.x = firstRect.size.width;
+        secondRect.origin.y = firstRect.size.height;
+        
+        CGRect thirdRect = secondRect;
+        thirdRect.origin.x = firstRect.origin.x;
+        
+        CGRect fourthRect = secondRect;
+        fourthRect.origin.y = firstRect.origin.y;
+        
+        CIImage *firstImage = [self.image imageByApplyingTransform:CGAffineTransformTranslate(CGAffineTransformMakeScale(1, -1), 0, self.image.extent.size.height)];
+        CIImage *secondImage = [self.image imageByApplyingTransform:CGAffineTransformTranslate(CGAffineTransformMakeScale(-1, 1), -self.image.extent.size.width, 0)];
+        CIImage *thirdImage = self.image;
+        CIImage *fourthImage = [self.image imageByApplyingTransform:CGAffineTransformTranslate(CGAffineTransformMakeScale(-1, -1), -self.image.extent.size.width, self.image.extent.size.height)];
+
+        
+        [self.coreImageContext drawImage:firstImage inRect:firstRect fromRect:self.image.extent];
+        [self.coreImageContext drawImage:secondImage inRect:secondRect fromRect:self.image.extent];
+        [self.coreImageContext drawImage:thirdImage inRect:thirdRect fromRect:self.image.extent];
+        [self.coreImageContext drawImage:fourthImage inRect:fourthRect fromRect:self.image.extent];
     }
 }
 

@@ -16,23 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4M-pj-aFl" customClass="CoreImageView">
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-p0-sZe" customClass="CoreImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bSh-BI-NFb" appends="YES" id="Wy9-aV-CcU"/>
+                                </connections>
                             </glkView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o4M-pj-aFl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0eo-1B-nls"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="o4M-pj-aFl" secondAttribute="bottom" id="5V0-kz-Lrs"/>
-                            <constraint firstAttribute="trailing" secondItem="o4M-pj-aFl" secondAttribute="trailing" id="lGC-TO-u6z"/>
-                            <constraint firstItem="o4M-pj-aFl" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="omT-Wx-Uei"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Nyh-p0-sZe" secondAttribute="bottom" id="9jZ-Iw-ThB"/>
+                            <constraint firstItem="Nyh-p0-sZe" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="IqY-eK-8EL"/>
+                            <constraint firstAttribute="trailing" secondItem="Nyh-p0-sZe" secondAttribute="trailing" id="MNt-XJ-Pfj"/>
+                            <constraint firstItem="Nyh-p0-sZe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="n8B-A6-EHr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="outputView" destination="o4M-pj-aFl" id="w2f-j7-dBH"/>
+                        <outlet property="outputView" destination="Nyh-p0-sZe" id="q4Y-q3-PLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bSh-BI-NFb">
+                    <connections>
+                        <action selector="tapRecognized:" destination="vXZ-lx-hvc" id="PK8-c7-YKf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="162.66666666666666" y="309.56"/>
         </scene>

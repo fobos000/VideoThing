@@ -19,6 +19,7 @@
 		3F49370B1B5D5C780029B61F /* CoreImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49370A1B5D5C780029B61F /* CoreImageView.m */; };
 		3F49370D1B5D5CA50029B61F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F49370C1B5D5CA50029B61F /* CoreImage.framework */; };
 		3F49370F1B5D5CB20029B61F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F49370E1B5D5CB20029B61F /* GLKit.framework */; };
+		3F4937121B5E418A0029B61F /* KaleidoImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4937111B5E418A0029B61F /* KaleidoImageFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		3F49370A1B5D5C780029B61F /* CoreImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageView.m; sourceTree = "<group>"; };
 		3F49370C1B5D5CA50029B61F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		3F49370E1B5D5CB20029B61F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3F4937101B5E418A0029B61F /* KaleidoImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaleidoImageFactory.h; sourceTree = "<group>"; };
+		3F4937111B5E418A0029B61F /* KaleidoImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaleidoImageFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				3F4936DE1B5D4FD00029B61F /* Supporting Files */,
 				3F4937091B5D5C780029B61F /* CoreImageView.h */,
 				3F49370A1B5D5C780029B61F /* CoreImageView.m */,
+				3F4937101B5E418A0029B61F /* KaleidoImageFactory.h */,
+				3F4937111B5E418A0029B61F /* KaleidoImageFactory.m */,
 			);
 			path = VideoThing;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			files = (
 				3F4936E71B5D4FD00029B61F /* ViewController.m in Sources */,
 				3F49370B1B5D5C780029B61F /* CoreImageView.m in Sources */,
+				3F4937121B5E418A0029B61F /* KaleidoImageFactory.m in Sources */,
 				3F4936E41B5D4FD00029B61F /* AppDelegate.m in Sources */,
 				3F4936E11B5D4FD00029B61F /* main.m in Sources */,
 				3F4937061B5D4FF70029B61F /* CameraBufferSource.m in Sources */,
